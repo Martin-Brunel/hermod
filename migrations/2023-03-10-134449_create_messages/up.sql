@@ -13,6 +13,6 @@ CREATE TABLE `hermod`.`message` (
 ALTER TABLE `hermod`.`message` 
     ADD CONSTRAINT `fk_message_1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `better_way`.`user` (`id`)
+    REFERENCES `hermod`.`user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE;

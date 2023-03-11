@@ -54,7 +54,8 @@ fn rocket() -> _ {
         .register("/", catchers![errors::unauthorized, errors::forbidden, errors::notfound])
         .mount("/", routes![all_options])
         .mount("/user", routes![
-                controllers::user::post_user
+                controllers::user::post_user,
+                controllers::user::put_user
             ])
         .mount("/auth", routes![
             controllers::auth::login

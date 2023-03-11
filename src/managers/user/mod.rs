@@ -37,3 +37,25 @@ pub fn check_credentials(credentials: Credentials) -> Result<User, Status>  {
         Err(e) => Err(e)
     }
 }
+
+pub fn modify_user_password(user_id: i32, password: String, brand: i32) -> Result<User, Status> {
+
+    let user = match repositories::user::get_by_id(user_id) {
+        Ok(user) => user,
+        Err(s) => return Err(s)
+    };
+    if user.brand_id != brand {
+        return Err(Status::Forbidden);
+    }
+    match repositories::user::update_password(user_id, password) {
+        Ok(_) => {
+            let new_user = match repositories::user::get_by_id(user_id) {
+                Ok(new_user) => new_user,
+                Err(s) => return Err(s)
+            };
+            Ok(new_user)
+        },
+        Err(s) => Err(s)
+    }
+
+}

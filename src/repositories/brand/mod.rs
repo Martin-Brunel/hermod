@@ -3,12 +3,11 @@ use rocket::http::Status;
 use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
 
-
 use crate::db_connect::{establish_connection};
 use crate::schema::{self, brand};
-
-use diesel::{RunQueryDsl, QueryDsl, Queryable, Insertable};
 use diesel::ExpressionMethods;
+use diesel::prelude::*;
+use diesel::{QueryDsl, Queryable, Insertable};
 
 #[derive(Queryable, Deserialize, Serialize, Insertable, ToSchema, Debug)]
 #[diesel(table_name = brand)]

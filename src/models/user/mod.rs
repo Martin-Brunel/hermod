@@ -6,7 +6,7 @@ use utoipa::ToSchema;
 use crate::schema::user;
 
 
-#[derive(Queryable, Deserialize, Serialize, Insertable, ToSchema, Debug)]
+#[derive(Queryable, Deserialize, Serialize, Insertable, ToSchema, Debug, PartialEq, Eq)]
 #[diesel(table_name = user)]
 #[diesel(belongs_to(Brand))]
 pub struct User {

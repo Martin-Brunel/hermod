@@ -2,6 +2,7 @@ use diesel::{Insertable, Queryable};
 use diesel;
 use serde::{Serialize, Deserialize};
 use crate::schema::user;
+pub mod put_user_input_dto;
 
 #[derive(Deserialize, Serialize)]
 pub struct UserInput {

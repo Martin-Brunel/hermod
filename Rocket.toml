@@ -1,0 +1,6 @@
+# [default.tls]
+# certs = "localhost.crt"
+# key = "localhost.key"
+
+[default]
+port = 8400

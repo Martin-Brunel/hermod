@@ -18,7 +18,7 @@ pub fn post_user(authorised: Security, user_input: Json<UserInput>) -> Result<Js
             email: user_input.email.clone(),
             password: hash_password(user_input.password.clone()),
             roles: String::from("[\"ROLE_USER\"]"),
-            brand_id: user_input.brand_id.clone(),
+            brand_id: user.brand_id.clone(),
             firstname: user_input.firstname.clone(),
             lastname: user_input.lastname.clone(),
         };

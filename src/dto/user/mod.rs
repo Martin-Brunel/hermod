@@ -7,7 +7,6 @@ use crate::schema::user;
 pub struct UserInput {
     pub email: String,
     pub password: String,
-    pub brand_id: i32,
     pub firstname: String,
     pub lastname: String,
 }

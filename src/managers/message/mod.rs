@@ -7,8 +7,7 @@ use crate::repositories::{self, session_repository};
 use crate::repositories::message_repository::Message;
 
 pub fn create(input_message: InputMessageDto, user: User) -> Result<Message, Status> {
-    let email = user.email.clone();
-    let user_to = match repositories::user::get_by_email(email.clone()) {
+    let user_to = match repositories::user::get_by_id(input_message.user_id.clone()) {
         Ok(user_to) => user_to,
         Err(_) => return Err(Status { code: 409 }),
     };

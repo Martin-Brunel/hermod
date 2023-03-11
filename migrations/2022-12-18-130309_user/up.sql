@@ -28,5 +28,3 @@ ALTER TABLE `hermod`.`user`
     REFERENCES `hermod`.`brand` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE;
-
-    INSERT INTO `hermod`.`brand` (`name`) VALUES ('Orgavita');

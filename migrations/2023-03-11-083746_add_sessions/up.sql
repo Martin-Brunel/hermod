@@ -15,7 +15,7 @@ ALTER TABLE `hermod`.`message`
 ADD INDEX `fk_message_2_idx` (`session_id` ASC) VISIBLE;
 
 ALTER TABLE `hermod`.`message` 
-ADD CONSTRAINT `fk_message_1`
+ADD CONSTRAINT `fk_message_12`
   FOREIGN KEY (`user_id`)
   REFERENCES `hermod`.`user` (`id`)
   ON DELETE NO ACTION

@@ -29,4 +29,4 @@ ALTER TABLE `hermod`.`user`
     ON DELETE CASCADE
     ON UPDATE CASCADE;
 
-    INSERT INTO `better_way`.`brand` (`name`) VALUES ('Orgavita');
+    INSERT INTO `hermod`.`brand` (`name`) VALUES ('Orgavita');

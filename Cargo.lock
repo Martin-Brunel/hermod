@@ -147,6 +147,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9e1b586273c5702936fe7b7d6896644d8be71e6314cfe09d3167c95f712589e8"
 
 [[package]]
+name = "base64"
+version = "0.21.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4a4ddaa51a5bc52a6948f74c06d20aaaddb71924eab79b8c97a8c556e942d6a"
+
+[[package]]
 name = "base64ct"
 version = "1.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -154,36 +160,15 @@ checksum = "b645a089122eccb6111b4f81cbc1a49f5900ac4666bb93ac027feaecf15607bf"
 
 [[package]]
 name = "bcrypt"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7e7c93a3fb23b2fdde989b2c9ec4dd153063ec81f408507f84c090cd91c6641"
+checksum = "9df288bec72232f78c1ec5fe4e8f1d108aa0265476e93097593c803c8c02062a"
 dependencies = [
- "base64 0.13.1",
+ "base64 0.21.0",
  "blowfish",
  "getrandom",
+ "subtle",
  "zeroize",
-]
-
-[[package]]
-name = "better_way_api"
-version = "0.1.0"
-dependencies = [
- "argon2",
- "bcrypt",
- "chrono",
- "diesel",
- "dotenvy",
- "jsonwebtoken",
- "rand",
- "reqwest",
- "rocket 0.5.0-rc.2",
- "rocket-client-addr",
- "rocket_cors",
- "rocket_dyn_templates",
- "serde",
- "serde_json",
- "utoipa",
- "utoipa-swagger-ui",
 ]
 
 [[package]]
@@ -895,6 +880,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33"
 dependencies = [
  "libc",
+]
+
+[[package]]
+name = "hermod_api"
+version = "0.1.0"
+dependencies = [
+ "argon2",
+ "bcrypt",
+ "chrono",
+ "diesel",
+ "dotenvy",
+ "jsonwebtoken",
+ "rand",
+ "reqwest",
+ "rocket 0.5.0-rc.2",
+ "rocket-client-addr",
+ "rocket_cors",
+ "rocket_dyn_templates",
+ "serde",
+ "serde_json",
+ "utoipa 3.1.0",
+ "utoipa-swagger-ui",
 ]
 
 [[package]]
@@ -3054,8 +3061,19 @@ checksum = "b626abb3bbbe41ce00df6dea3d109a83a034930245c3307026d82d71e7a06e43"
 dependencies = [
  "indexmap",
  "serde",
+ "utoipa-gen 2.4.2",
+]
+
+[[package]]
+name = "utoipa"
+version = "3.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d9376d225846fe53ab3425916eba3736936f19bdd5dbfe46604e9cc6a28ed411"
+dependencies = [
+ "indexmap",
+ "serde",
  "serde_json",
- "utoipa-gen",
+ "utoipa-gen 3.1.0",
 ]
 
 [[package]]
@@ -3063,6 +3081,18 @@ name = "utoipa-gen"
 version = "2.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "250e8cdb0461b6fbaa1c1acb7f08300d773713fab721776becf5f7386b41a791"
+dependencies = [
+ "proc-macro-error",
+ "proc-macro2 1.0.47",
+ "quote 1.0.21",
+ "syn 1.0.105",
+]
+
+[[package]]
+name = "utoipa-gen"
+version = "3.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a1d050a2b5851b1d1aaa976854af782491298052e29fdfe47ca37872e2b3aa99"
 dependencies = [
  "lazy_static",
  "proc-macro-error",
@@ -3084,7 +3114,7 @@ dependencies = [
  "rust-embed",
  "serde",
  "serde_json",
- "utoipa",
+ "utoipa 2.4.2",
  "zip",
 ]
 

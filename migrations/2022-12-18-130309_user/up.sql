@@ -25,7 +25,7 @@ CREATE TABLE `hermod`.`brand` (
 ALTER TABLE `hermod`.`user` 
     ADD CONSTRAINT `fk_user_1`
     FOREIGN KEY (`brand_id`)
-    REFERENCES `better_way`.`brand` (`id`)
+    REFERENCES `hermod`.`brand` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE;
 
